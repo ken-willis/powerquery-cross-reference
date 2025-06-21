@@ -1,0 +1,12 @@
+.vscode/**
+.vscode-test/**
+src/**
+.editorconfig
+.gitattributes
+.gitignore
+**/*.map
+**/*.ts
+**/.vscode-test.*
+**/eslint.config.mjs
+.prettierrc
+**/tsconfig.json

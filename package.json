@@ -1,0 +1,62 @@
+{
+    "name": "vscode-extension-template",
+    "displayName": "VS Code Extension Template",
+    "description": "A professional TypeScript VS Code extension starter template with ESLint, Prettier, EditorConfig, testing, and complete development tooling pre-configured.",
+    "version": "0.0.1",
+    "publisher": "ken-willis",
+    "author": "Ken Willis",
+    "engines": {
+        "vscode": "^1.101.0"
+    },
+    "categories": [
+        "Other",
+        "Snippets"
+    ],
+    "license": "MIT",
+    "main": "./out/extension.js",
+    "keywords": [
+        "template",
+        "starter",
+        "boilerplate",
+        "scaffold",
+        "typescript",
+        "extension-development",
+        "vscode-extension"
+    ],
+    "contributes": {
+        "commands": [
+        {
+            "command": "extension.helloWorld",
+            "title": "Hello World",
+            "category": "Template"
+        }
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ken-willis/vscode-extension-template"
+    },
+    "bugs": {
+        "url": "https://github.com/ken-willis/vscode-extension-template/issues"
+    },
+    "homepage": "https://github.com/ken-willis/vscode-extension-template#readme",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.101.0",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "20.x",
+        "@typescript-eslint/eslint-plugin": "^8.31.1",
+        "@typescript-eslint/parser": "^8.31.1",
+        "eslint": "^9.25.1",
+        "typescript": "^5.8.3",
+        "@vscode/test-cli": "^0.0.10",
+        "@vscode/test-electron": "^2.5.2"
+    }
+}
