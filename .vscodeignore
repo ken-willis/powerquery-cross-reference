@@ -3,6 +3,7 @@
 src/**
 .editorconfig
 .gitattributes
+.github/**
 .gitignore
 **/*.map
 **/*.ts

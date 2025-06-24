@@ -2,7 +2,7 @@
     "name": "vscode-extension-template",
     "displayName": "VS Code Extension Template",
     "description": "A professional TypeScript VS Code extension starter template with ESLint, Prettier, EditorConfig, testing, and complete development tooling pre-configured.",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "ken-willis",
     "author": "Ken Willis",
     "engines": {
@@ -22,6 +22,9 @@
         "typescript",
         "extension-development",
         "vscode-extension"
+    ],
+    "activationEvents": [
+    "onCommand:vscode-extension-template.helloWorld"
     ],
     "contributes": {
         "commands": [

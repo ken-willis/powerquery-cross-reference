@@ -6,11 +6,11 @@ suite('Extension Test Suite', () => {
     vscode.window.showInformationMessage('Start all tests.');
 
     test('Extension should be present', () => {
-        assert.ok(vscode.extensions.getExtension('ken-willis.vscode-extension-template'));
+        assert.ok(vscode.extensions.getExtension('{{extensionPublisherID}}.{{extensionName}}'));
     });
 
     test('Extension should activate', async () => {
-        const extension = vscode.extensions.getExtension('ken-willis.vscode-extension-template');
+        const extension = vscode.extensions.getExtension('{{extensionPublisherID}}.{{extensionName}}');
         if (extension) {
             await extension.activate();
             assert.strictEqual(extension.isActive, true);
@@ -19,12 +19,12 @@ suite('Extension Test Suite', () => {
 
     test('Hello World command should be registered', async () => {
         const commands = await vscode.commands.getCommands();
-        assert.ok(commands.includes('extension.helloWorld'));
+        assert.ok(commands.includes('{{extensionName}}.helloWorld'));
     });
 
     test('Hello World command should execute', async () => {
         // Test command execution
-        await vscode.commands.executeCommand('extension.helloWorld');
+        await vscode.commands.executeCommand('{{extensionName}}.helloWorld');
         // Command should complete without throwing
     });
 
