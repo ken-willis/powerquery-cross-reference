@@ -99,7 +99,7 @@ If you prefer manual setup, update these files:
     "name": "your-extension-name",
     "displayName": "Your Extension Display Name",
     "description": "What your extension does",
-    "publisher": "ken-willis",
+    "publisher": "your-ms-publisher-id",
     "author": "Your Name",
     "repository": {
         "url": "https://github.com/your-username/your-repository-name"
