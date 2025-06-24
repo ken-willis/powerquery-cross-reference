@@ -23,6 +23,9 @@
         "extension-development",
         "vscode-extension"
     ],
+    "activationEvents": [
+    "onCommand:vscode-extension-template.helloWorld"
+    ],
     "contributes": {
         "commands": [
         {
