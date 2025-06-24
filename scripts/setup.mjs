@@ -1,16 +1,24 @@
-// scripts/setup.js - Interactive template setup
+// scripts/setup.mjs - Interactive template setup
 import fs from 'fs';
 import path from 'path';
 import readline from 'readline';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Cross-platform readline interface with better compatibility
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
+    terminal: true, // Force terminal mode for better compatibility
+});
+
+// Ensure proper cleanup on exit
+process.on('SIGINT', () => {
+    rl.close();
+    process.exit(0);
 });
 
 class TemplateSetup {
@@ -18,17 +26,28 @@ class TemplateSetup {
         this.answers = {};
         this.rootDir = path.join(__dirname, '..');
         this.templatesDir = path.join(this.rootDir, 'templates');
-        
+
         // Template file paths
         this.templatePaths = {
             packageJson: path.join(this.templatesDir, 'package.template.json'),
             readme: path.join(this.templatesDir, 'README.template.md'),
             changelog: path.join(this.templatesDir, 'CHANGELOG.template.md'),
             extension: path.join(this.templatesDir, 'src', 'extension.template.ts'),
-            extensionTest: path.join(this.templatesDir, 'src', 'test', 'extension.template.test.ts'),
-            integrationTest: path.join(this.templatesDir, 'src', 'test', 'suite', 'integration.template.test.ts')
+            extensionTest: path.join(
+                this.templatesDir,
+                'src',
+                'test',
+                'extension.template.test.ts'
+            ),
+            integrationTest: path.join(
+                this.templatesDir,
+                'src',
+                'test',
+                'suite',
+                'integration.template.test.ts'
+            ),
         };
-        
+
         // Target file paths
         this.targetPaths = {
             packageJson: path.join(this.rootDir, 'package.json'),
@@ -36,59 +55,76 @@ class TemplateSetup {
             changelog: path.join(this.rootDir, 'CHANGELOG.md'),
             extension: path.join(this.rootDir, 'src', 'extension.ts'),
             extensionTest: path.join(this.rootDir, 'src', 'test', 'extension.test.ts'),
-            integrationTest: path.join(this.rootDir, 'src', 'test', 'suite', 'integration.test.ts')
+            integrationTest: path.join(this.rootDir, 'src', 'test', 'suite', 'integration.test.ts'),
         };
     }
 
     async run() {
-        console.log('🚀 VS Code Extension Template Setup');
-        console.log('=====================================\n');
+        try {
+            console.log('🚀 VS Code Extension Template Setup');
+            console.log('=====================================\n');
 
-        await this.gatherInfo();
-        await this.processFiles();
-        await this.cleanup();
+            await this.gatherInfo();
+            await this.processFiles();
+            await this.cleanup();
 
-        console.log('\n✨ Setup complete! Your extension is ready for development.');
-        console.log('\nNext steps:');
-        console.log('  1. npm install');
-        console.log('  2. Press F5 to launch Extension Development Host');
-        console.log('  3. Start building your extension!');
-
-        rl.close();
+            console.log('\n✨ Setup complete! Your extension is ready for development.');
+            console.log('\nNext steps:');
+            console.log('  1. npm install');
+            console.log('  2. Press F5 to launch Extension Development Host');
+            console.log('  3. Start building your extension!');
+        } catch (error) {
+            console.error('\n❌ Setup failed:', error.message);
+            process.exit(1);
+        } finally {
+            rl.close();
+        }
     }
 
     async gatherInfo() {
-        this.answers.extensionName = await this.ask('Extension Name (kebab-case): ');
-        this.answers.extensionDisplayName = await this.ask('Extension Display Name: ');
-        this.answers.extensionDescription = await this.ask('Extension Description: ');
-        this.answers.extensionPublisherID = await this.ask('Extension Publisher Identifier: ');
-        this.answers.extensionAuthorFullName = await this.ask('Extension Author Full Name: ');
-        this.answers.githubUsername = await this.ask('GitHub Username: ');
-        this.answers.repositoryName = await this.ask('Repository Name: ');
+        try {
+            this.answers.extensionName = await this.ask('Extension Name (kebab-case): ');
+            this.answers.extensionDisplayName = await this.ask('\nExtension Display Name: ');
+            this.answers.extensionDescription = await this.ask('\nExtension Description: ');
+            this.answers.extensionPublisherID = await this.ask(
+                '\nExtension Publisher Identifier: '
+            );
+            this.answers.extensionAuthorFullName = await this.ask('\nExtension Author Full Name: ');
+            this.answers.githubUsername = await this.ask('\nGitHub Username: ');
+            this.answers.repositoryName = await this.ask('\nRepository Name: ');
+        } catch (error) {
+            console.error('\nError gathering information:', error.message);
+            throw error;
+        }
     }
 
     async processFiles() {
         console.log('\n📝 Processing template files...');
 
-        // Ensure target directories exist
-        await this.ensureDirectoriesExist();
+        try {
+            // Ensure target directories exist
+            await this.ensureDirectoriesExist();
 
-        // Process all template files
-        await this.processPackageJson();
-        await this.processReadme();
-        await this.processChangelog();
-        await this.processExtensionFile();
-        await this.processTestFiles();
+            // Process all template files
+            await this.processPackageJson();
+            await this.processReadme();
+            await this.processChangelog();
+            await this.processExtensionFile();
+            await this.processTestFiles();
+        } catch (error) {
+            console.error('Error processing files:', error.message);
+            throw error;
+        }
     }
 
     async ensureDirectoriesExist() {
         const directories = [
             path.join(this.rootDir, 'src'),
             path.join(this.rootDir, 'src', 'test'),
-            path.join(this.rootDir, 'src', 'test', 'suite')
+            path.join(this.rootDir, 'src', 'test', 'suite'),
         ];
 
-        directories.forEach(dir => {
+        directories.forEach((dir) => {
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
                 console.log(`  ✓ Created directory: ${path.relative(this.rootDir, dir)}`);
@@ -107,8 +143,10 @@ class TemplateSetup {
 
         // Backup original
         if (fs.existsSync(this.targetPaths.packageJson)) {
-            fs.writeFileSync(this.targetPaths.packageJson + '.template-backup', 
-                fs.readFileSync(this.targetPaths.packageJson));
+            fs.writeFileSync(
+                this.targetPaths.packageJson + '.template-backup',
+                fs.readFileSync(this.targetPaths.packageJson)
+            );
         }
 
         // Write new package.json
@@ -127,8 +165,10 @@ class TemplateSetup {
 
         // Backup original
         if (fs.existsSync(this.targetPaths.readme)) {
-            fs.writeFileSync(this.targetPaths.readme + '.template-backup', 
-                fs.readFileSync(this.targetPaths.readme));
+            fs.writeFileSync(
+                this.targetPaths.readme + '.template-backup',
+                fs.readFileSync(this.targetPaths.readme)
+            );
         }
 
         // Write new README.md
@@ -204,34 +244,60 @@ class TemplateSetup {
             'scripts',
             'templates',
             'README.md.template-backup',
-            'package.json.template-backup'
+            'package.json.template-backup',
         ];
 
-        itemsToRemove.forEach(item => {
+        itemsToRemove.forEach((item) => {
             const fullPath = path.join(this.rootDir, item);
             if (fs.existsSync(fullPath)) {
-                if (fs.statSync(fullPath).isDirectory()) {
-                    fs.rmSync(fullPath, { recursive: true });
-                } else {
-                    fs.unlinkSync(fullPath);
+                try {
+                    if (fs.statSync(fullPath).isDirectory()) {
+                        fs.rmSync(fullPath, { recursive: true, force: true });
+                    } else {
+                        fs.unlinkSync(fullPath);
+                    }
+                    console.log(`  ✓ Removed ${item}`);
+                } catch (error) {
+                    console.log(`  ⚠️  Could not remove ${item}: ${error.message}`);
                 }
-                console.log(`  ✓ Removed ${item}`);
             }
         });
     }
 
     ask(question) {
-        return new Promise((resolve) => {
-            rl.question(question, (answer) => {
-                resolve(answer.trim());
+        return new Promise((resolve, reject) => {
+            // Force flush and display the question
+            console.log(question);
+            console.log('(Please type your answer and press Enter)');
+
+            rl.question('> ', (answer) => {
+                const trimmedAnswer = answer.trim();
+                if (trimmedAnswer === '') {
+                    console.log('Please provide a valid answer.');
+                    return this.ask(question).then(resolve).catch(reject);
+                }
+                resolve(trimmedAnswer);
             });
         });
     }
 }
 
-// Run setup
-if (import.meta.url === `file://${process.argv[1]}`) {
-    new TemplateSetup().run().catch(console.error);
+// Cross-platform script execution check
+function isMainModule() {
+    // Convert both paths to file URLs for consistent comparison
+    const scriptUrl = pathToFileURL(process.argv[1]).href;
+    const moduleUrl = import.meta.url;
+
+    return scriptUrl === moduleUrl;
+}
+
+// Run setup only when called directly (not when imported)
+if (isMainModule()) {
+    const setup = new TemplateSetup();
+    setup.run().catch((error) => {
+        console.error('Fatal error:', error);
+        process.exit(1);
+    });
 }
 
 export default TemplateSetup;

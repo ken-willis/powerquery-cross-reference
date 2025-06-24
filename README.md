@@ -10,7 +10,7 @@ A professional TypeScript VS Code extension starter template with ESLint, Pretti
 
 1. **Use this template** - Click "Use this template" button above
 2. **Clone your new repository**
-3. **Run setup script**: `node scripts/setup.js`
+3. **Run setup script**: `& "C:\Program Files\Git\bin\bash.exe" -c "node scripts/setup.mjs"`
 4. **Follow interactive prompts** to customize your extension
 5. **Install dependencies**: `npm install`
 6. **Start developing**: Press `F5` to launch Extension Development Host
@@ -65,7 +65,7 @@ After cloning your repository from this template:
 
 ```bash
 # Run the interactive setup script
-node scripts/setup.js
+node scripts/setup.mjs
 ```
 
 The script will prompt you for:
