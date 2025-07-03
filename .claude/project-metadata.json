@@ -1,0 +1,666 @@
+﻿{
+    "vscodeUser":  {
+                       "settings.json":  "{\r\n  \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",\r\n  \"editor.formatOnSave\": true,\r\n  \"errorLens.enabledDiagnosticLevels\": [\"error\", \"warning\", \"info\"],\r\n  \"errorLens.followCursor\": \"activeLine\",\r\n  \"git-graph.date.format\": \"Relative\",\r\n  \"git-graph.repository.onLoad.showCheckedOutBranch\": true,\r\n  \"path-intellisense.autoSlashAfterDirectory\": true,\r\n  \"path-intellisense.extensionOnImport\": true,\r\n  \"path-intellisense.showHiddenFiles\": false,\r\n  \"security.workspace.trust.untrustedFiles\": \"open\",\r\n  \"files.autoSave\": \"afterDelay\",\r\n  \"files.autoSaveWhenNoErrors\": true,\r\n  \"git.autofetch\": true,\r\n  \"powerquery.diagnostics.isWorkspaceCacheAllowed\": false,\r\n  \"powerquery.client.additionalSymbolsDirectories\": [\r\n    \"C:\\\\Users\\\\kwjr\\\\OneDrive\\\\Documents\\\\.Code\\\\pq-test\\\\Symbols\"\r\n  ],\r\n  \"terminal.integrated.defaultProfile.windows\": \"PowerShell\"\r\n}\r\n",
+                       "tasks.json":  "{\r\n    \"version\": \"2.0.0\",\r\n    \"tasks\": [\r\n        {\r\n            \"label\": \"Export Project Structure\",\r\n            \"type\": \"shell\",\r\n            \"command\": \"powershell\",\r\n            \"args\": [\r\n                \"-ExecutionPolicy\", \"Bypass\",\r\n                \"-File\", \"${workspaceFolder}/../export-structure.ps1\",\r\n                \"-OutputFile\", \"${workspaceFolder}/.claude/structure.md\",\r\n                \"-MetadataDir\", \"${workspaceFolder}/.claude\",\r\n                \"-ExcludeNoExtension\"\r\n            ],\r\n            \"group\": \"build\",\r\n            \"presentation\": {\r\n                \"echo\": true,\r\n                \"reveal\": \"always\",\r\n                \"focus\": false,\r\n                \"panel\": \"shared\"\r\n            },\r\n            \"problemMatcher\": []\r\n        }\r\n    ]\r\n}"
+                   },
+    "environment":  {
+                        "gitVersion":  "git version 2.50.0.windows.1",
+                        "gitConfig":  {
+                                          "user.email":  "217271205+ken-willis@users.noreply.github.com",
+                                          "user.name":  "Ken Willis",
+                                          "core.editor":  "\"C:\\Users\\kwjr\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait"
+                                      },
+                        "vscodeExtensions":  [
+                                                 "christian-kohler.npm-intellisense",
+                                                 "christian-kohler.path-intellisense",
+                                                 "dbaeumer.vscode-eslint",
+                                                 "eamodio.gitlens",
+                                                 "emeraldwalk.runonsave",
+                                                 "esbenp.prettier-vscode",
+                                                 "github.copilot",
+                                                 "github.copilot-chat",
+                                                 "github.vscode-github-actions",
+                                                 "mhutchie.git-graph",
+                                                 "microsoft-isvexptools.powerplatform-vscode",
+                                                 "ms-python.debugpy",
+                                                 "ms-python.python",
+                                                 "ms-python.vscode-pylance",
+                                                 "ms-vscode.extension-test-runner",
+                                                 "ms-vscode.powershell",
+                                                 "onlyutkarsh.vsix-viewer",
+                                                 "powerquery.vscode-powerquery",
+                                                 "usernamehw.errorlens"
+                                             ],
+                        "npmVersion":  "11.3.0",
+                        "powershellVersion":  "5.1.26100.4202",
+                        "nodeVersion":  "v24.2.0",
+                        "vscodeVersion":  "1.101.2"
+                    },
+    "projectName":  "powerquery-cross-reference",
+    "uploadRecommendations":  {
+                                  "Skip":  [
+                                               {
+                                                   "Path":  "package-lock.json",
+                                                   "SizeKB":  143.1,
+                                                   "Extension":  ".json"
+                                               },
+                                               {
+                                                   "Path":  ".reference/microsoft/vscode-powerquery/client/package-lock.json",
+                                                   "SizeKB":  290.6,
+                                                   "Extension":  ".json"
+                                               },
+                                               {
+                                                   "Path":  ".reference/microsoft/vscode-powerquery/scripts/package-lock.json",
+                                                   "SizeKB":  115.5,
+                                                   "Extension":  ".json"
+                                               },
+                                               {
+                                                   "Path":  ".reference/microsoft/vscode-powerquery/server/package-lock.json",
+                                                   "SizeKB":  138.6,
+                                                   "Extension":  ".json"
+                                               },
+                                               {
+                                                   "Path":  ".reference/microsoft/vscode-powerquery/server/src/library/sdk/sdk-enUs.json",
+                                                   "SizeKB":  843.1,
+                                                   "Extension":  ".json"
+                                               },
+                                               {
+                                                   "Path":  ".reference/microsoft/vscode-powerquery/server/src/library/standard/standard-enUs.json",
+                                                   "SizeKB":  820,
+                                                   "Extension":  ".json"
+                                               }
+                                           ],
+                                  "Optional":  [
+                                                   {
+                                                       "Path":  ".claude/artifact-types.json",
+                                                       "SizeKB":  5.5,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".claude/project-metadata.json",
+                                                       "SizeKB":  57.7,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/language-configuration.json",
+                                                       "SizeKB":  0.9,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/package-lock.json",
+                                                       "SizeKB":  64.6,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/.vscode/extensions.json",
+                                                       "SizeKB":  0.1,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/.vscode/launch.json",
+                                                       "SizeKB":  1.8,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/.vscode/settings.json",
+                                                       "SizeKB":  0.3,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/.vscode/tasks.json",
+                                                       "SizeKB":  1.6,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/client/tsconfig.webpack.json",
+                                                       "SizeKB":  0.1,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/client/.vscode/extensions.json",
+                                                       "SizeKB":  0.1,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/dataflow.json",
+                                                       "SizeKB":  0.6,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/ExtensionTest.json",
+                                                       "SizeKB":  0.7,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/.vscode/settings.json",
+                                                       "SizeKB":  0,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/server/.mocharc.json",
+                                                       "SizeKB":  0.1,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/server/mochaReporterConfig.json",
+                                                       "SizeKB":  0.1,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/server/tsconfig.webpack.json",
+                                                       "SizeKB":  0.1,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/server/.vscode/extensions.json",
+                                                       "SizeKB":  0.1,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  ".reference/microsoft/vscode-powerquery/syntaxes/powerquery.tmLanguage.json",
+                                                       "SizeKB":  8.3,
+                                                       "Extension":  ".json"
+                                                   },
+                                                   {
+                                                       "Path":  "templates/package.template.json",
+                                                       "SizeKB":  1.6,
+                                                       "Extension":  ".json"
+                                                   }
+                                               ],
+                                  "Medium":  [
+                                                 {
+                                                     "Path":  "CHANGELOG.md",
+                                                     "SizeKB":  1,
+                                                     "Extension":  ".md"
+                                                 },
+                                                 {
+                                                     "Path":  "CONTRIBUTING.md",
+                                                     "SizeKB":  2.2,
+                                                     "Extension":  ".md"
+                                                 },
+                                                 {
+                                                     "Path":  ".claude/structure.md",
+                                                     "SizeKB":  15,
+                                                     "Extension":  ".md"
+                                                 },
+                                                 {
+                                                     "Path":  ".claude/upload-recommendations.md",
+                                                     "SizeKB":  9.9,
+                                                     "Extension":  ".md"
+                                                 },
+                                                 {
+                                                     "Path":  ".github/workflows/ci.yml",
+                                                     "SizeKB":  1.3,
+                                                     "Extension":  ".yml"
+                                                 },
+                                                 {
+                                                     "Path":  ".reference/microsoft/vscode-powerquery/SECURITY.md",
+                                                     "SizeKB":  2.7,
+                                                     "Extension":  ".md"
+                                                 },
+                                                 {
+                                                     "Path":  ".reference/microsoft/vscode-powerquery/.github/ISSUE_TEMPLATE/bug_report.md",
+                                                     "SizeKB":  0.6,
+                                                     "Extension":  ".md"
+                                                 },
+                                                 {
+                                                     "Path":  ".reference/microsoft/vscode-powerquery/.github/ISSUE_TEMPLATE/feature_request.md",
+                                                     "SizeKB":  0.6,
+                                                     "Extension":  ".md"
+                                                 },
+                                                 {
+                                                     "Path":  ".reference/microsoft/vscode-powerquery/.github/workflows/pr-gated.yml",
+                                                     "SizeKB":  1,
+                                                     "Extension":  ".yml"
+                                                 },
+                                                 {
+                                                     "Path":  "templates/CHANGELOG.template.md",
+                                                     "SizeKB":  0.8,
+                                                     "Extension":  ".md"
+                                                 },
+                                                 {
+                                                     "Path":  "templates/README.template.md",
+                                                     "SizeKB":  2.2,
+                                                     "Extension":  ".md"
+                                                 }
+                                             ],
+                                  "HighPriority":  [
+                                                       {
+                                                           "Path":  "package.json",
+                                                           "SizeKB":  1.9,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  "README.md",
+                                                           "SizeKB":  12.2,
+                                                           "Extension":  ".md"
+                                                       },
+                                                       {
+                                                           "Path":  "tsconfig.json",
+                                                           "SizeKB":  0.6,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/.eslintrc.js",
+                                                           "SizeKB":  6.3,
+                                                           "Extension":  ".js"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/package.json",
+                                                           "SizeKB":  12.2,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/README.md",
+                                                           "SizeKB":  6,
+                                                           "Extension":  ".md"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/tsconfig.json",
+                                                           "SizeKB":  0.6,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/.eslintrc.js",
+                                                           "SizeKB":  0,
+                                                           "Extension":  ".js"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/.vscode-test.js",
+                                                           "SizeKB":  0.9,
+                                                           "Extension":  ".js"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/package.json",
+                                                           "SizeKB":  2.4,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/tsconfig.json",
+                                                           "SizeKB":  0.2,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/webpack.config.js",
+                                                           "SizeKB":  1,
+                                                           "Extension":  ".js"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/commands.ts",
+                                                           "SizeKB":  5.5,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/constants.ts",
+                                                           "SizeKB":  0.5,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/dataflowModel.ts",
+                                                           "SizeKB":  0.3,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/extension.ts",
+                                                           "SizeKB":  4.5,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/funcUtils.ts",
+                                                           "SizeKB":  2.2,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/librarySymbolClient.ts",
+                                                           "SizeKB":  2.5,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/librarySymbolManager.ts",
+                                                           "SizeKB":  6.8,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/librarySymbolUtils.ts",
+                                                           "SizeKB":  4.6,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/powerQueryApi.ts",
+                                                           "SizeKB":  0.8,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/subscriptions/documentSemanticTokensProvider.ts",
+                                                           "SizeKB":  2.9,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/subscriptions/index.ts",
+                                                           "SizeKB":  0.1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/completion.test.ts",
+                                                           "SizeKB":  1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/completionUtils.ts",
+                                                           "SizeKB":  2.7,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/dataflowExtractCommand.test.ts",
+                                                           "SizeKB":  1.5,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/diagnostics.test.ts",
+                                                           "SizeKB":  4.6,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/documentSymbols.test.ts",
+                                                           "SizeKB":  1.1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/documentSymbolUtils.ts",
+                                                           "SizeKB":  1.8,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/encodingCommands.test.ts",
+                                                           "SizeKB":  3.1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/extension.test.ts",
+                                                           "SizeKB":  0.5,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/librarySymbolManager.test.ts",
+                                                           "SizeKB":  5.3,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/librarySymbolUtils.test.ts",
+                                                           "SizeKB":  1.5,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/sectionCompletion.test.ts",
+                                                           "SizeKB":  1.5,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/suite/testUtils.ts",
+                                                           "SizeKB":  2.8,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/completion.pq",
+                                                           "SizeKB":  0,
+                                                           "Extension":  ".pq"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/Diagnostics.ExternalLibrarySymbol.pq",
+                                                           "SizeKB":  0,
+                                                           "Extension":  ".pq"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/Diagnostics.NoErrors.pq",
+                                                           "SizeKB":  0.1,
+                                                           "Extension":  ".pq"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/diagnostics.pq",
+                                                           "SizeKB":  0,
+                                                           "Extension":  ".pq"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/Diagnostics.TableIsEmpty.Error.pq",
+                                                           "SizeKB":  0,
+                                                           "Extension":  ".pq"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/DocumentSymbols.pq",
+                                                           "SizeKB":  0.2,
+                                                           "Extension":  ".pq"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/client/src/test/testFixture/section.pq",
+                                                           "SizeKB":  0.2,
+                                                           "Extension":  ".pq"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/scripts/.eslintrc.js",
+                                                           "SizeKB":  0,
+                                                           "Extension":  ".js"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/scripts/package.json",
+                                                           "SizeKB":  2.1,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/scripts/readme.md",
+                                                           "SizeKB":  0.3,
+                                                           "Extension":  ".md"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/scripts/tsconfig.json",
+                                                           "SizeKB":  0.2,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/scripts/src/benchmarkFile.ts",
+                                                           "SizeKB":  2.7,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/.eslintrc.js",
+                                                           "SizeKB":  0,
+                                                           "Extension":  ".js"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/package.json",
+                                                           "SizeKB":  2.7,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/tsconfig.json",
+                                                           "SizeKB":  0.2,
+                                                           "Extension":  ".json"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/webpack.config.js",
+                                                           "SizeKB":  1,
+                                                           "Extension":  ".js"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/errorUtils.ts",
+                                                           "SizeKB":  2.4,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/eventHandlerUtils.ts",
+                                                           "SizeKB":  3.2,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/index.ts",
+                                                           "SizeKB":  0.1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/server.ts",
+                                                           "SizeKB":  17.2,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/traceManagerUtils.ts",
+                                                           "SizeKB":  2.1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/cancellationToken/cancellationTokenAdapter.ts",
+                                                           "SizeKB":  1.1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/cancellationToken/cancellationTokenUtils.ts",
+                                                           "SizeKB":  0.9,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/cancellationToken/index.ts",
+                                                           "SizeKB":  0.2,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/library/externalLibraryUtils.ts",
+                                                           "SizeKB":  0.8,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/library/index.ts",
+                                                           "SizeKB":  0.3,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/library/librarySymbolUtils.ts",
+                                                           "SizeKB":  2.4,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/library/libraryTypeResolver.ts",
+                                                           "SizeKB":  4.1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/library/libraryUtils.ts",
+                                                           "SizeKB":  3.1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/library/moduleLibraryUtils.ts",
+                                                           "SizeKB":  1.1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/settings/index.ts",
+                                                           "SizeKB":  0.2,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/settings/settings.ts",
+                                                           "SizeKB":  0.9,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/settings/settingsUtils.ts",
+                                                           "SizeKB":  4.9,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/test/errorUtils.test.ts",
+                                                           "SizeKB":  1.9,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  ".reference/microsoft/vscode-powerquery/server/src/test/standardLibrary.test.ts",
+                                                           "SizeKB":  11,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  "src/extension.ts",
+                                                           "SizeKB":  1.8,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  "src/test/extension.test.ts",
+                                                           "SizeKB":  1.4,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  "src/test/suite/integration.test.ts",
+                                                           "SizeKB":  1,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  "templates/src/extension.template.ts",
+                                                           "SizeKB":  1.8,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  "templates/src/test/extension.template.test.ts",
+                                                           "SizeKB":  1.4,
+                                                           "Extension":  ".ts"
+                                                       },
+                                                       {
+                                                           "Path":  "templates/src/test/suite/integration.template.test.ts",
+                                                           "SizeKB":  1,
+                                                           "Extension":  ".ts"
+                                                       }
+                                                   ]
+                              },
+    "vscodeWorkspace":  {
+                            ".vscode/settings.json":  "// Place your settings in this file to overwrite default and user settings.\n{\n\t\"files.exclude\": {\n\t\t\"out\": false // set this to true to hide the \"out\" folder with the compiled JS files\n\t},\n\t\"search.exclude\": {\n\t\t\"out\": true // set this to false to include \"out\" folder in search results\n\t},\n\t// Turn off tsc task auto detection since we have the necessary tasks as npm scripts\n\t\"typescript.tsc.autoDetect\": \"off\"\n}\n",
+                            ".vscode/tasks.json":  "// See https://go.microsoft.com/fwlink/?LinkId=733558\n// for the documentation about the tasks.json format\n{\n\t\"version\": \"2.0.0\",\n\t\"tasks\": [\n\t\t{\n\t\t\t\"type\": \"npm\",\n\t\t\t\"script\": \"watch\",\n\t\t\t\"problemMatcher\": \"$tsc-watch\",\n\t\t\t\"isBackground\": true,\n\t\t\t\"presentation\": {\n\t\t\t\t\"reveal\": \"never\"\n\t\t\t},\n\t\t\t\"group\": {\n\t\t\t\t\"kind\": \"build\",\n\t\t\t\t\"isDefault\": true\n\t\t\t}\n\t\t}\n\t]\n}\n",
+                            ".vscode/launch.json":  "// A launch configuration that compiles the extension and then opens it inside a new window\n// Use IntelliSense to learn about possible attributes.\n// Hover to view descriptions of existing attributes.\n// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387\n{\n\t\"version\": \"0.2.0\",\n\t\"configurations\": [\n\t\t{\n\t\t\t\"name\": \"Run Extension\",\n\t\t\t\"type\": \"extensionHost\",\n\t\t\t\"request\": \"launch\",\n\t\t\t\"args\": [\n\t\t\t\t\"--extensionDevelopmentPath=${workspaceFolder}\"\n\t\t\t],\n\t\t\t\"outFiles\": [\n\t\t\t\t\"${workspaceFolder}/out/**/*.js\"\n\t\t\t],\n\t\t\t\"preLaunchTask\": \"${defaultBuildTask}\"\n\t\t}\n\t]\n}\n",
+                            ".vscode/extensions.json":  "{\n\t// See http://go.microsoft.com/fwlink/?LinkId=827846\n\t// for the documentation about the extensions.json format\n\t\"recommendations\": [\n\t\t// Code quality and formatting\n\t\t\"dbaeumer.vscode-eslint\",\n\t\t\"esbenp.prettier-vscode\",\n\t\t\"usernamehw.errorlens\",\n\t\t\n\t\t// Testing\n\t\t\"ms-vscode.extension-test-runner\",\n\t\t\n\t\t// Git integration\n\t\t\"eamodio.gitlens\",\n\t\t\"mhutchie.git-graph\",\n\t\t\"github.copilot\",\n\t\t\"github.copilot-chat\",\n\t\t\"github.vscode-github-actions\",\n\t\t\n\t\t// Development utilities\n\t\t\"christian-kohler.npm-intellisense\",\n\t\t\"christian-kohler.path-intellisense\",\n\t]\n}\n"
+                        },
+    "projectConfig":  {
+                          ".gitignore":  "out\ndist\nnode_modules\n*.vsix\n.claude",
+                          ".gitattributes":  "# Set default to normalize line endings\n* text=auto eol=lf\n\n# Force LF for text files that should never have CRLF\n*.ts text eol=lf\n*.js text eol=lf\n*.json text eol=lf\n*.md text eol=lf\n*.yml text eol=lf\n*.yaml text eol=lf\n\n# PowerShell scripts\n*.ps1 text eol=lf\n\n# Binary files\n*.png binary\n*.jpg binary\n*.gif binary\n*.ico binary\n*.vsix binary",
+                          "package.json":  "{\n    \"name\": \"vscode-extension-template\",\n    \"displayName\": \"VS Code Extension Template\",\n    \"description\": \"A professional TypeScript VS Code extension starter template with ESLint, Prettier, EditorConfig, testing, and complete development tooling pre-configured.\",\n    \"version\": \"0.1.1\",\n    \"publisher\": \"ken-willis\",\n    \"author\": \"Ken Willis\",\n    \"engines\": {\n        \"vscode\": \"^1.101.0\"\n    },\n    \"categories\": [\n        \"Other\",\n        \"Snippets\"\n    ],\n    \"license\": \"MIT\",\n    \"main\": \"./out/extension.js\",\n    \"keywords\": [\n        \"template\",\n        \"starter\",\n        \"boilerplate\",\n        \"scaffold\",\n        \"typescript\",\n        \"extension-development\",\n        \"vscode-extension\"\n    ],\n    \"activationEvents\": [\n    \"onCommand:vscode-extension-template.helloWorld\"\n    ],\n    \"contributes\": {\n        \"commands\": [\n        {\n            \"command\": \"extension.helloWorld\",\n            \"title\": \"Hello World\",\n            \"category\": \"Template\"\n        }\n        ]\n    },\n    \"repository\": {\n        \"type\": \"git\",\n        \"url\": \"https://github.com/ken-willis/vscode-extension-template\"\n    },\n    \"bugs\": {\n        \"url\": \"https://github.com/ken-willis/vscode-extension-template/issues\"\n    },\n    \"homepage\": \"https://github.com/ken-willis/vscode-extension-template#readme\",\n    \"scripts\": {\n        \"vscode:prepublish\": \"npm run compile\",\n        \"compile\": \"tsc -p ./\",\n        \"watch\": \"tsc -watch -p ./\",\n        \"pretest\": \"npm run compile \u0026\u0026 npm run lint\",\n        \"lint\": \"eslint src\",\n        \"test\": \"vscode-test\"\n    },\n    \"devDependencies\": {\n        \"@types/vscode\": \"^1.101.0\",\n        \"@types/mocha\": \"^10.0.10\",\n        \"@types/node\": \"20.x\",\n        \"@typescript-eslint/eslint-plugin\": \"^8.31.1\",\n        \"@typescript-eslint/parser\": \"^8.31.1\",\n        \"eslint\": \"^9.25.1\",\n        \"typescript\": \"^5.8.3\",\n        \"@vscode/test-cli\": \"^0.0.10\",\n        \"@vscode/test-electron\": \"^2.5.2\"\n    }\n}\n",
+                          ".gitmodules":  "[submodule \".reference/microsoft/vscode-powerquery\"]\n\tpath = .reference/microsoft/vscode-powerquery\n\turl = https://github.com/microsoft/vscode-powerquery\n",
+                          ".prettierrc":  "{\n  \"semi\": true,\n  \"trailingComma\": \"es5\",\n  \"singleQuote\": true,\n  \"printWidth\": 100,\n  \"tabWidth\": 4\n}\n",
+                          ".vscodeignore":  ".vscode/**\n.vscode-test/**\nsrc/**\n.editorconfig\n.gitattributes\n.github/**\n.gitignore\n**/*.map\n**/*.ts\n**/.vscode-test.*\n**/eslint.config.mjs\n.prettierrc\n**/tsconfig.json\n.claude\n.reference",
+                          ".editorconfig":  "root = true\n\n# All files\n[*]\ncharset = utf-8\nend_of_line = lf\ninsert_final_newline = true\ntrim_trailing_whitespace = true\n\n# TypeScript/JavaScript\n[*.{ts,js,json}]\nindent_style = space\nindent_size = 4\n\n# Markdown\n[*.md]\ntrim_trailing_whitespace = false\nindent_size = 2\n",
+                          "tsconfig.json":  "{\n    \"compilerOptions\": {\n        \"module\": \"Node16\",\n        \"target\": \"ES2022\",\n        \"outDir\": \"out\",\n        \"lib\": [\"ES2022\"],\n        \"sourceMap\": true,\n        \"rootDir\": \"src\",\n        \"strict\": true /* enable all strict type-checking options */\n        /* Additional Checks */\n        // \"noImplicitReturns\": true, /* Report error when not all code paths in function return a value. */\n        // \"noFallthroughCasesInSwitch\": true, /* Report errors for fallthrough cases in switch statement. */\n        // \"noUnusedParameters\": true,  /* Report errors on unused parameters. */\n    },\n    \"include\": [\"src\"]\n}\n"
+                      },
+    "insights":  {
+                     "extensionInsights":  {
+                                               "hasRunOnSave":  true,
+                                               "hasGitGraph":  true,
+                                               "hasPython":  true,
+                                               "hasPowerQuery":  true,
+                                               "additionalExtensions":  [
+                                                                            "github.copilot-chat",
+                                                                            "ms-python.debugpy",
+                                                                            "ms-python.vscode-pylance"
+                                                                        ],
+                                               "hasExtensionTesting":  true,
+                                               "hasVSIXViewer":  true,
+                                               "hasESLint":  true,
+                                               "hasPowerShell":  true,
+                                               "hasPathIntelliSense":  true,
+                                               "hasPrettier":  true,
+                                               "hasGitLens":  true,
+                                               "totalCount":  19,
+                                               "hasNpmIntelliSense":  true,
+                                               "hasErrorLens":  true,
+                                               "hasGitHubActions":  true,
+                                               "hasPowerPlatform":  true,
+                                               "hasCopilot":  true
+                                           },
+                     "systemEnvironment":  {
+                                               "userName":  "kwjr",
+                                               "defaultShell":  "C:\\WINDOWS\\system32\\cmd.exe",
+                                               "gitDefaultBranch":  "main",
+                                               "computerName":  "HOME-DESK1"
+                                           },
+                     "vscodePreferences":  {
+                                               "defaultTerminal":  "PowerShell",
+                                               "gitAutoFetch":  true,
+                                               "formatOnSave":  true,
+                                               "autoSave":  "afterDelay"
+                                           }
+                 },
+    "generated":  "2025-06-28 10:38:30",
+    "projectRoot":  "C:\\Users\\kwjr\\OneDrive\\Documents\\.Code\\powerquery-cross-reference"
+}

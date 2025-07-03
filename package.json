@@ -1,48 +1,35 @@
 {
-    "name": "vscode-extension-template",
-    "displayName": "VS Code Extension Template",
-    "description": "A professional TypeScript VS Code extension starter template with ESLint, Prettier, EditorConfig, testing, and complete development tooling pre-configured.",
-    "version": "0.1.1",
+    "name": "pq-workspace-devkit",
+    "displayName": "PQ Workspace DevKit",
+    "description": "Transforms Power Query development by automatically scanning your workspace and generating intelligent symbol files that unlock full workspace IntelliSense support.",
+    "version": "0.0.1",
     "publisher": "ken-willis",
     "author": "Ken Willis",
     "engines": {
         "vscode": "^1.101.0"
     },
-    "categories": [
-        "Other",
-        "Snippets"
-    ],
+    "categories": ["Other"],
     "license": "MIT",
     "main": "./out/extension.js",
-    "keywords": [
-        "template",
-        "starter",
-        "boilerplate",
-        "scaffold",
-        "typescript",
-        "extension-development",
-        "vscode-extension"
-    ],
-    "activationEvents": [
-    "onCommand:vscode-extension-template.helloWorld"
-    ],
+    "keywords": ["vscode-extension"],
+    "activationEvents": [],
     "contributes": {
         "commands": [
-        {
-            "command": "extension.helloWorld",
-            "title": "Hello World",
-            "category": "Template"
-        }
+            {
+                "command": "pq-workspace-devkit.helloWorld",
+                "title": "Hello World",
+                "category": "PQ Workspace DevKit"
+            }
         ]
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/ken-willis/vscode-extension-template"
+        "url": "https://github.com/ken-willis/pq-workspace-devkit"
     },
     "bugs": {
-        "url": "https://github.com/ken-willis/vscode-extension-template/issues"
+        "url": "https://github.com/ken-willis/pq-workspace-devkit/issues"
     },
-    "homepage": "https://github.com/ken-willis/vscode-extension-template#readme",
+    "homepage": "https://github.com/ken-willis/pq-workspace-devkit#readme",
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",

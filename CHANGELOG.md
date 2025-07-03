@@ -1,44 +1,41 @@
 # Change Log
 
-All notable changes to vscode-extension-template will be documented in this file.
+All notable changes to the "pq-workspace-devkit" extension will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.1] - 2025-06-24
-
-### Fixed
-
--   Interactive setup in scripts\setup.mjs not displaying on PowerShell Terminals
-
-## [0.1.0] - 2025-06-23
+## [Unreleased]
 
 ### Added
 
--   Interactive setup in scripts\setup.js
--   Added templates to replace vscode-extension-template placeholders during interactive setup
--   Comprehensive test suite
--   Added GitHub CI workflow
--   Added CONTRIBUTING.md
+-   N/A
 
 ### Changed
 
--   Changed package.json to reflect correct author
--   Enhanced README with setup guide
--   Updated CHANGELOG
--   Documented recommended extensions in .vscode\extensions.json
+-   N/A
 
 ### Fixed
 
--   Added full name to LICENSE
+-   N/A
 
-## [0.0.1] - 2025-06-21
+### Removed
+
+-   N/A
+
+## [0.1.0] - 2025-MM-DD
+
+- Initial development release
 
 ### Added
 
--   Initial extension scaffolding
--   Basic test framework setup
--   ESLint and Prettier integration
+-   Initial implementation of PQ Workspace DevKit
+-   Core functionality and features
+-   Command palette integration
 -   Extension activation and deactivation
--   Hello World command example
--   Professional development tooling
--   TypeScript configuration
+-   User documentation and setup guide
+
+### Documentation
+
+-   Complete README with usage instructions
+-   Extension guidelines compliance

@@ -1,0 +1,141 @@
+{
+  "Code": {
+    "HTML": ["Page", "Template", "Component"],
+    "CSS": ["Stylesheet", "Theme", "Module"],
+    "JavaScript": ["Module", "Function", "Script"],
+    "TypeScript": ["Interface", "Type", "Module", "Declaration"],
+    "React": ["Component", "Hook", "Context", "Test"],
+    "Angular": ["Component", "Module", "Service"],
+    "Svelte": ["Component"],
+    "Vue": ["Component"],
+    "PHP": ["Class", "Function", "Script"],
+    "Python": ["Class", "Function", "Module", "Script"],
+    "CSharp": ["Class", "Interface", "Program"],
+    "VB": ["Class", "Module"],
+    "Java": ["Class", "Interface", "Package"],
+    "Kotlin": ["Class", "Object"],
+    "Swift": ["Class", "Extension", "Protocol"],
+    "C": ["Function", "Header", "Source"],
+    "Cpp": ["Class", "Header", "Source"],
+    "Rust": ["Crate", "Module"],
+    "Go": ["Module", "Package"],
+    "Assembly": ["Function", "Module"],
+    "PowerShell": ["Script", "Module", "Function"],
+    "Batch": ["Script"],
+    "Ruby": ["Class", "Module"],
+    "Perl": ["Module", "Script"],
+    "Lua": ["Module", "Script"],
+    "R": ["Function", "Package", "Script"],
+    "MATLAB": ["Function", "Script"],
+    "Julia": ["Module", "Script"],
+    "FSharp": ["Module", "Script"],
+    "Elixir": ["Module"],
+    "Erlang": ["Module"],
+    "COBOL": ["Program", "Module", "Function"],
+    "VBA": ["Class", "Function", "Module"],
+    "SQL": ["Function", "Procedure", "Query"],
+    "TSQL": ["Function", "Procedure", "Query"],
+    "GraphQL": ["Mutation", "Query", "Schema"],
+    "DAX": ["Expression", "Measure", "Query"],
+    "PowerQuery": ["DataConnector", "Function", "Query"],
+    "Dart": ["Class", "Widget"]
+  },
+  "Configuration": {
+    "VSCode": ["Extension", "Launch", "Settings", "Tasks"],
+    "ESLint": [],
+    "Prettier": [],
+    "EditorConfig": [],
+    "Git": ["Attributes", "Config", "Hooks", "Ignore"],
+    "Docker": ["File", "Compose"],
+    "Kubernetes": ["ConfigMap", "Deployment", "Service"],
+    "Helm": ["Chart", "Template"],
+    "Terraform": ["Module", "Provider", "Resource"],
+    "CloudFormation": ["Stack", "Template"],
+    "Bicep": ["Module", "Template"],
+    "Ansible": ["Playbook", "Role"],
+    "Build": ["Package", "Dependencies", "Config"]
+  },
+  "Data": {
+    "JSON": [],
+    "YAML": [],
+    "XML": [],
+    "CSV": [],
+    "TOML": [],
+    "INI": []
+  },
+  "Business": {
+    "Financial": {
+      "Accounting": ["ChartOfAccounts", "TaxConfiguration", "PaymentTerms"],
+      "Analysis": ["BudgetPlanning", "CashFlow", "Forecasting", "KPITracking"],
+      "Reporting": ["MonthlyReports", "QuarterlyReports", "AnnualReports", "ExecutiveDashboard"]
+    },
+    "Operations": {
+      "Inventory": ["ItemCatalog", "StockManagement", "WarehouseSetup"],
+      "Processes": ["Workflow", "Procedure", "Checklist", "SOP"],
+      "Vendors": ["VendorSetup", "SupplierManagement", "ProcurementProcess"],
+      "Planning": ["BusinessPlan", "StrategicPlan", "MarketAnalysis", "CompetitiveAnalysis"],
+      "Projects": ["ProjectPlan", "Timeline", "ResourceAllocation", "RiskAssessment"]
+    },
+    "Documents": {
+      "Templates": ["Invoice", "PurchaseOrder", "Contract", "Proposal"],
+      "Forms": ["Application", "Survey", "Feedback", "Registration"],
+      "Legal": ["Policy", "Agreement", "Terms"],
+      "Compliance": ["AuditTrail", "ComplianceChecklist", "RegulatoryFiling"]
+    }
+  },
+  "Academic": {
+    "Research": {
+      "Analysis": ["DataAnalysis", "StatisticalAnalysis", "ResearchReport", "CaseStudy"],
+      "Papers": ["ResearchPaper", "ThesisDraft", "Literature", "Abstract"]
+    },
+    "Educational": {
+      "Instruction": ["Tutorial", "Lesson", "Workshop", "Curriculum"],
+      "Reference": ["Guide", "Manual", "Handbook", "Glossary"],
+      "Assessment": ["Exercise", "Quiz", "Assignment", "Rubric"]
+    },
+    "Documentation": {
+      "LaTeX": ["Article", "Book", "Document"],
+      "AsciiDoc": ["Document"],
+      "reStructuredText": ["Document"],
+      "Markdown": ["Document", "README", "Guide"],
+      "Text": ["Document", "Notes"],
+      "License": ["Document"],
+      "Jupyter": ["Notebook"],
+      "Research": ["Notes", "Log"],
+      "Lab": ["Report", "Notes"]
+    }
+  },
+  "Creative": {
+    "Writing": {
+      "Fiction": ["Story", "Novel", "Screenplay", "Dialogue"],
+      "NonFiction": ["Essay", "Article", "BlogPost", "Editorial"],
+      "Poetry": ["Poem", "Verse", "Lyrics"],
+      "Technical": ["Manual", "Guide", "Documentation", "Specification"]
+    },
+    "Visual": {
+      "Graphics": ["SVG", "Illustration", "Icon", "Logo"],
+      "Layout": ["WebLayout", "PrintLayout", "Wireframe", "Mockup"],
+      "Animation": ["CSSAnimation", "SVGAnimation", "Transition"]
+    },
+    "Marketing": {
+      "Content": ["Advertisement", "SocialMedia", "Newsletter", "Campaign"],
+      "Branding": ["BrandGuide", "StyleGuide", "ColorPalette", "Typography"]
+    }
+  },
+  "Interactive": {
+    "Applications": {
+      "Tools": ["Calculator", "Converter", "Generator", "Validator"],
+      "Games": ["PuzzleGame", "CardGame", "BoardGame", "Simulation"],
+      "Utilities": ["FormBuilder", "SurveyTool", "QuizMaker", "Timer"]
+    },
+    "Visualization": {
+      "Charts": ["LineChart", "BarChart", "PieChart", "ScatterPlot"],
+      "Dashboards": ["ExecutiveDashboard", "OperationalDashboard", "AnalyticsDashboard", "KPIDashboard"],
+      "Maps": ["DataMap", "InteractiveMap", "FlowChart", "NetworkDiagram"]
+    },
+    "Interface": {
+      "Forms": ["DataEntry", "Registration", "Survey", "Feedback"],
+      "Navigation": ["Menu", "Sidebar", "Breadcrumb", "Pagination"]
+    }
+  }
+}
