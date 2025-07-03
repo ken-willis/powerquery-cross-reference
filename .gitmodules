@@ -1,3 +1,9 @@
 [submodule ".reference/microsoft/vscode-powerquery"]
 	path = .reference/microsoft/vscode-powerquery
 	url = https://github.com/microsoft/vscode-powerquery
+[submodule ".reference/microsoft/powerquery-parser"]
+	path = .reference/microsoft/powerquery-parser
+	url = https://github.com/microsoft/powerquery-parser.git
+[submodule ".reference/microsoft/powerquery-language-services"]
+	path = .reference/microsoft/powerquery-language-services
+	url = https://github.com/microsoft/powerquery-language-services.git
