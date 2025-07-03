@@ -1,5 +1,5 @@
 // src/configuration.ts
-// Power Query Cross-Reference Extension - Configuration Manager
+// PQ Workspace DevKit - Configuration Manager
 // Manages extension settings and Microsoft Power Query integration
 
 import * as vscode from 'vscode';
@@ -49,7 +49,7 @@ export class ConfigurationManager {
         const config = vscode.workspace.getConfiguration(ConfigurationManager.EXTENSION_ID);
         
         return {
-            fileExtensions: config.get<string[]>('fileExtensions', ['.pq', '.m', '.pqm']),
+            fileExtensions: config.get<string[]>('fileExtensions', ['.pq', '.pqout', '.pqm', '.m', '.mout']),
             symbolsDirectory: this.getSymbolsDirectory(),
             autoGenerate: config.get<boolean>('autoGenerate', true),
             excludePatterns: config.get<string[]>('excludePatterns', ['**/node_modules/**', '**/.git/**']),
@@ -197,7 +197,7 @@ export class ConfigurationManager {
                 [`${ConfigurationManager.EXTENSION_ID}.fileExtensions`]: {
                     type: 'array',
                     items: { type: 'string' },
-                    default: ['.pq', '.m', '.pqm'],
+                    default: ['.pq', '.pqout', '.pqm', '.m', '.mout'],
                     description: 'File extensions to scan for Power Query symbols'
                 },
                 [`${ConfigurationManager.EXTENSION_ID}.symbolsDirectory`]: {

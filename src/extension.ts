@@ -1,5 +1,5 @@
 // src/extension.ts
-// Power Query Cross-Reference Extension - Main Entry Point
+// PQ Workspace DevKit - Main Entry Point
 // Orchestrates file scanning, symbol generation, and Microsoft integration
 
 import * as vscode from 'vscode';

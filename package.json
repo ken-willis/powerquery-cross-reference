@@ -8,19 +8,101 @@
     "engines": {
         "vscode": "^1.101.0"
     },
-    "categories": ["Other"],
+    "categories": [
+        "Other"
+    ],
     "license": "MIT",
     "main": "./out/extension.js",
-    "keywords": ["vscode-extension"],
-    "activationEvents": [],
+    "keywords": [
+        "vscode-extension"
+    ],
+    "activationEvents": [
+        "onLanguage:powerquery",
+        "workspaceContains:**/*.pq",
+        "workspaceContains:**/*.pqout",
+        "workspaceContains:**/*.pqm",
+        "workspaceContains:**/*.m",
+        "workspaceContains:**/*.mout"
+    ],
     "contributes": {
         "commands": [
             {
-                "command": "pq-workspace-devkit.helloWorld",
-                "title": "Hello World",
+                "command": "pq-workspace-devkit.refresh",
+                "title": "Refresh Symbols",
+                "category": "PQ Workspace DevKit"
+            },
+            {
+                "command": "pq-workspace-devkit.generateTestSymbols",
+                "title": "Generate Test Symbols",
+                "category": "PQ Workspace DevKit"
+            },
+            {
+                "command": "pq-workspace-devkit.cleanup",
+                "title": "Clean Up Symbol Files",
+                "category": "PQ Workspace DevKit"
+            },
+            {
+                "command": "pq-workspace-devkit.configure",
+                "title": "Configure Microsoft Extension",
+                "category": "PQ Workspace DevKit"
+            },
+            {
+                "command": "pq-workspace-devkit.status",
+                "title": "Show Status",
                 "category": "PQ Workspace DevKit"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "PQ Workspace DevKit",
+            "properties": {
+                "pq-workspace-devkit.fileExtensions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        ".pq",
+                        ".pqout",
+                        ".pqm",
+                        ".m",
+                        ".mout"
+                    ],
+                    "description": "File extensions to scan for Power Query symbols"
+                },
+                "pq-workspace-devkit.symbolsDirectory": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Custom directory for generated symbol files (relative to workspace root)"
+                },
+                "pq-workspace-devkit.autoGenerate": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Automatically generate symbol files when workspace opens"
+                },
+                "pq-workspace-devkit.excludePatterns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        "**/node_modules/**",
+                        "**/.git/**"
+                    ],
+                    "description": "Glob patterns to exclude from symbol scanning"
+                },
+                "pq-workspace-devkit.enableLogging": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enable debug logging to console"
+                },
+                "pq-workspace-devkit.updateOnSave": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Update symbol files automatically when Power Query files are saved"
+                }
+            }
+        }
     },
     "repository": {
         "type": "git",
@@ -39,14 +121,18 @@
         "test": "vscode-test"
     },
     "devDependencies": {
-        "@types/vscode": "^1.101.0",
         "@types/mocha": "^10.0.10",
         "@types/node": "20.x",
+        "@types/vscode": "^1.101.0",
         "@typescript-eslint/eslint-plugin": "^8.31.1",
         "@typescript-eslint/parser": "^8.31.1",
-        "eslint": "^9.25.1",
-        "typescript": "^5.8.3",
         "@vscode/test-cli": "^0.0.10",
-        "@vscode/test-electron": "^2.5.2"
+        "@vscode/test-electron": "^2.5.2",
+        "eslint": "^9.25.1",
+        "typescript": "^5.8.3"
+    },
+    "dependencies": {
+        "@microsoft/powerquery-language-services": "^0.10.4",
+        "@microsoft/powerquery-parser": "^0.16.1"
     }
 }

@@ -17,14 +17,24 @@ suite('Extension Test Suite', () => {
         }
     });
 
-    test('Hello World command should be registered', async () => {
+    test('All commands should be registered', async () => {
         const commands = await vscode.commands.getCommands();
-        assert.ok(commands.includes('pq-workspace-devkit.helloWorld'));
+        const expectedCommands = [
+            'pq-workspace-devkit.refresh',
+            'pq-workspace-devkit.generateTestSymbols',
+            'pq-workspace-devkit.cleanup',
+            'pq-workspace-devkit.configure',
+            'pq-workspace-devkit.status'
+        ];
+        
+        expectedCommands.forEach(cmd => {
+            assert.ok(commands.includes(cmd), `Command ${cmd} not found`);
+        });
     });
 
-    test('Hello World command should execute', async () => {
+    test('Refresh command should execute', async () => {
         // Test command execution
-        await vscode.commands.executeCommand('pq-workspace-devkit.helloWorld');
+        await vscode.commands.executeCommand('pq-workspace-devkit.refresh');
         // Command should complete without throwing
     });
 
@@ -35,5 +45,17 @@ suite('Extension Test Suite', () => {
         assert.ok(packageJson.description);
         assert.ok(packageJson.version);
         assert.ok(packageJson.engines.vscode);
+        assert.ok(packageJson.activationEvents);
+        assert.ok(packageJson.contributes.commands);
+        assert.ok(packageJson.contributes.configuration);
+    });
+
+    test('Configuration schema should be valid', () => {
+        const packageJson = require('../../package.json');
+        const config = packageJson.contributes.configuration;
+        
+        assert.ok(config.properties['pq-workspace-devkit.fileExtensions']);
+        assert.ok(config.properties['pq-workspace-devkit.symbolsDirectory']);
+        assert.ok(config.properties['pq-workspace-devkit.autoGenerate']);
     });
 });

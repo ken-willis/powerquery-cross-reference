@@ -1,5 +1,5 @@
 // src/symbolGenerator.ts
-// Power Query Cross-Reference Extension - Symbol Generator
+// PQ Workspace DevKit - Symbol Generator
 // Generates Microsoft-compatible symbol files from Power Query code
 
 import * as vscode from 'vscode';
